@@ -1,0 +1,302 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Fonds de réarmement agricole</title>
+<meta name="description" content="Déploiement du plan CASI (Climat, Adaptation, Sécheresse, Incendie) sur Démarche Numérique depuis l'annonce ministérielle du 5 septembre 2026 : 79 démarches, 91 départements, 55 941 dossiers déposés au 16 octobre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1e2022; --muted:#5c6066; --paper:#fbf9f5; --surface:#ffffff; --line:#e2dfd7;
+  --admin:#1d4ed8; --admin-soft:#eff6ff; --usager:#15803d; --usager-soft:#f0fdf4;
+  --accent:#b45309; --accent-soft:#fffbeb; --bad:#b91c1c; --bad-soft:#fef2f2;
+  --field:var(--usager); --field-soft:var(--usager-soft); --crisis:var(--bad); --crisis-soft:var(--bad-soft);
+  --close:#6b7280; --close-soft:#f1f2f3;
+  --shadow: 0 1px 2px rgba(30,32,34,.06), 0 8px 24px -12px rgba(30,32,34,.12);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ink:#f3f4f6; --muted:#9ca3af; --paper:#18181b; --surface:#27272a; --line:#3f3f46;
+    --admin:#60a5fa; --admin-soft:#1e3a8a; --usager:#4ade80; --usager-soft:#14532d;
+    --accent:#f59e0b; --accent-soft:#451a03; --bad:#f87171; --bad-soft:#450a0a;
+    --field:var(--usager); --field-soft:var(--usager-soft); --crisis:var(--bad); --crisis-soft:var(--bad-soft);
+    --close:#9ca3af; --close-soft:#2b2c24;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ink:#f3f4f6; --muted:#9ca3af; --paper:#18181b; --surface:#27272a; --line:#3f3f46;
+  --admin:#60a5fa; --admin-soft:#1e3a8a; --usager:#4ade80; --usager-soft:#14532d;
+  --accent:#f59e0b; --accent-soft:#451a03; --bad:#f87171; --bad-soft:#450a0a;
+  --field:var(--usager); --field-soft:var(--usager-soft); --crisis:var(--bad); --crisis-soft:var(--bad-soft);
+  --close:#9ca3af; --close-soft:#2b2c24;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;padding:0 1.1rem;padding-block:2rem 3.5rem}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;margin:0}
+h1{font-size:clamp(1.8rem,4.2vw,2.6rem);font-weight:800;line-height:1.12;max-width:26ch;text-wrap:balance}
+h2{font-size:1.3rem;font-weight:800;margin:0 0 .2rem}
+.eyebrow{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--crisis);font-weight:700;margin:0 0 .5rem}
+.lede{color:var(--muted);max-width:62ch;margin:.9rem 0 0;font-size:1.02rem}
+.lede b{color:var(--ink)}
+a{color:var(--accent)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin:1.8rem 0}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--shadow)}
+.kpi .v{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.05}
+.kpi .l{font-size:.82rem;color:var(--muted);margin-top:.25rem}
+.kpi.accent .v{color:var(--accent)}
+.kpi.crisis .v{color:var(--crisis)}
+.kpi.field .v{color:var(--field)}
+
+section{margin-top:2.6rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:var(--shadow)}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.panel-head p{margin:0;font-size:.86rem;color:var(--muted)}
+
+/* timeline */
+.tl-chart{display:grid;grid-template-columns:repeat(10,1fr);gap:.5rem;align-items:end;height:160px;margin:1rem 0 .4rem}
+.tl-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:.3rem}
+.tl-bar{width:100%;max-width:38px;border-radius:5px 5px 2px 2px;background:var(--accent);position:relative;min-height:2px}
+.tl-bar::after{content:attr(data-v);position:absolute;top:-1.3rem;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:700;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tl-axis{display:grid;grid-template-columns:repeat(10,1fr);gap:.5rem;font-size:.7rem;color:var(--muted);text-align:center}
+.tl-note{font-size:.76rem;color:var(--crisis);text-align:center;margin-top:.1rem;font-weight:600}
+.tl-cumul{margin-top:1.4rem;padding-top:1.1rem;border-top:1px dashed var(--line);font-size:.88rem;color:var(--muted);display:flex;gap:1.6rem;flex-wrap:wrap}
+.tl-cumul b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* territories */
+.territory-list{display:grid;gap:.5rem;margin-top:.6rem}
+.t-row{display:grid;grid-template-columns:11.5rem 1fr 4.2rem;align-items:center;gap:.7rem;font-size:.87rem}
+@media (max-width:620px){.t-row{grid-template-columns:7.5rem 1fr 3.4rem;font-size:.8rem}}
+.t-label{color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.t-sub{display:block;font-size:.72rem;font-weight:400;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-track{display:block;height:14px;background:var(--field-soft);border-radius:4px;overflow:hidden}
+.t-fill{display:block;height:100%;background:var(--field);border-radius:4px}
+.t-val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--field)}
+.t-more{font-size:.82rem;color:var(--muted);margin-top:.7rem}
+
+/* detail table */
+.controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem}
+.controls input, .controls select{font:inherit;font-size:.88rem;padding:.5rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.controls input{flex:1;min-width:180px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.86rem}
+th,td{padding:.55rem .7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--paper);font-weight:700;cursor:pointer;user-select:none;white-space:nowrap;position:sticky;top:0}
+thead th:hover{color:var(--accent)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-soft)}
+.pill{display:inline-block;font-size:.74rem;font-weight:700;padding:.15rem .55rem;border-radius:999px}
+.pill.publiee{background:var(--field-soft);color:var(--field)}
+.pill.close{background:var(--close-soft);color:var(--close)}
+.titre-cell{max-width:360px}
+.count{font-size:.82rem;color:var(--muted);margin-left:.4rem}
+
+.method{font-size:.88rem;color:var(--muted)}
+.method h3{font-size:.95rem;color:var(--ink);margin:1rem 0 .3rem}
+.method h3:first-child{margin-top:0}
+.method ul{padding-left:1.2rem;margin:.3rem 0}
+.method li{margin:.3rem 0}
+.method code{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:.1rem .35rem;font-size:.85em}
+
+footer{margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem;font-size:.82rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Plan CASI — Climat · Adaptation · Sécheresse · Incendie</p>
+  <h1>Le fonds de réarmement agricole, démarche par démarche</h1>
+  <p class="lede">Depuis l'annonce de la ministre de l'Agriculture le <b>5 septembre 2026</b>, les préfectures et DDT ont publié <b>79 démarches</b> de ce plan sur Démarche Numérique, couvrant <b>91 départements</b> (quatre guichets régionaux — Bretagne, Pays de la Loire, Île-de-France, Corse — comptent pour leurs départements membres), pour <b>55 941 dossiers déposés</b>. Le déploiement est terminé : une seule démarche nouvelle depuis le 7 octobre, et 31 guichets déjà clos. Ce qui se joue désormais est l'instruction — et, côté budget, le plan de relance agricole annoncé le 15 octobre par le Premier ministre, de 500 à 700 M€ prélevés sur le projet de loi de finances pour 2027, qui est un texte distinct de ce fonds d'urgence. Mise à jour au <b>16 octobre 2026</b>.</p>
+
+  <div class="kpis">
+    <div class="kpi accent"><div class="v" id="kpiN">—</div><div class="l">démarches identifiées</div></div>
+    <div class="kpi field"><div class="v" id="kpiDossiers">—</div><div class="l">dossiers déposés</div></div>
+    <div class="kpi"><div class="v" id="kpiTerr">—</div><div class="l">départements / régions couverts</div></div>
+    <div class="kpi crisis"><div class="v" id="kpiClose">—</div><div class="l">démarches déjà closes</div></div>
+  </div>
+
+  <section aria-labelledby="h-tl">
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="h-tl">La dynamique de déploiement, semaine par semaine</h2>
+        <p>Nouvelles démarches publiées (barres) — depuis l'annonce du 5 septembre</p>
+      </div>
+      <div class="tl-chart" id="tlChart"></div>
+      <div class="tl-axis" id="tlAxis"></div>
+      <p class="tl-note" id="tlNote"></p>
+      <div class="tl-cumul" id="tlCumul"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-terr">
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="h-terr">Les territoires les plus mobilisés</h2>
+        <p>Dossiers déposés par département ou région (guichet unique)</p>
+      </div>
+      <div class="territory-list" id="terrList"></div>
+      <p class="t-more" id="terrMore"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-detail">
+    <div class="panel">
+      <div class="panel-head">
+        <h2 id="h-detail">Le détail, démarche par démarche</h2>
+        <p><span id="rowCount">—</span> démarches — cliquez un en-tête pour trier</p>
+      </div>
+      <div class="controls">
+        <input type="text" id="search" placeholder="Rechercher un département, un organisme, un mot du titre…">
+        <select id="filterEtat">
+          <option value="">Tous les états</option>
+          <option value="publiee">Publiées</option>
+          <option value="close">Closes</option>
+        </select>
+      </div>
+      <div class="tw">
+        <table>
+          <thead><tr>
+            <th data-key="dept">Territoire</th>
+            <th data-key="titre">Démarche</th>
+            <th data-key="etat">État</th>
+            <th data-key="pub">Mise en ligne</th>
+            <th data-key="clot">Clôture</th>
+            <th data-key="dossiers" class="num">Dossiers</th>
+          </tr></thead>
+          <tbody id="detailBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <div class="panel method">
+      <h2 id="h-method" style="margin-bottom:.6rem">Méthode</h2>
+      <h3>Source</h3>
+      <p>Deux sources successives. Le périmètre des démarches et leur rattachement territorial viennent de l'export open data de data.gouv.fr, jeu de données <code>descriptif-des-demarches-publiees-sur-demarche-numerique-gouv-fr</code>, résolu le 7 octobre 2026 sur 43 956 démarches. Les nombres de dossiers, les états et les dates de clôture ont été rafraîchis le 16 octobre 2026 à partir d'une extraction directe de la plateforme (114 démarches, périmètre collectivités et quatre ministères dont l'agriculture).</p>
+      <h3>Filtre</h3>
+      <ul>
+        <li>État « publiée » ou « close » (les démarches dépubliées sont exclues).</li>
+        <li>Titre ou description (normalisés, insensibles à la casse et aux accents) contenant au moins un de : <code>réarmement</code>, <code>CASI</code>, <code>fonds d'urgence</code>, <code>fonds d'appui à la trésorerie</code>, <code>Climat, Adaptation, Sécheresse, Incendie</code>.</li>
+        <li>Mise en ligne à partir du 15 août 2026 (sans ce filtre, les 5 termes ramènent 338 démarches, dont 262 sont des dispositifs d'urgence agricole plus anciens — gel, grêle, viticulture — sans rapport avec le plan annoncé le 5 septembre).</li>
+        <li>Exclusions : titres « test », « sauvegarde », « version beta », « V1 », « ne pas déposer » ; démarches hors fonds agricole (DSEC, dérogations PAC, fonds d'urgence incendie communal — ex. Trévillach (66), destruction à tir / ESOD) ; le fonds « céréales, oléagineux, protéagineux » du Rhône (DDT69, ouvert et clos le même jour) a été écarté comme dispositif distinct, à confirmer.</li>
+      </ul>
+      <h3>Territoires</h3>
+      <p>Le champ « service » de chaque démarche porte en principe un code département. Trois démarches mal rattachées à Paris par défaut ont été corrigées à la main à partir du titre : Eure-et-Loir, Lot et Martinique reviennent à leur département. Quatre guichets régionaux comptent pour leurs départements membres — Bretagne (Côtes-d'Armor, Finistère, Ille-et-Vilaine, Morbihan), Pays de la Loire (Loire-Atlantique, Maine-et-Loire, Mayenne, Sarthe, Vendée), Île-de-France (Paris, Seine-et-Marne, Yvelines, Essonne, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Val-d'Oise) et Corse (Corse-du-Sud, Haute-Corse) — les dossiers déposés, eux, restent comptés au niveau régional, faute de détail par département dans la source.</p>
+      <p>Les quatre démarches jusqu'ici renseignées à la main (Ariège, Bas-Rhin, Saône-et-Loire, Haute-Savoie) figurent dans l'extraction du 16 octobre : leurs titres, dates et volumes réels remplacent les valeurs provisoires, et la correction manuelle de 423 dossiers n'a plus lieu d'être. À l'inverse, cinq démarches (Marne, Charente, Île-de-France, Ardèche, Somme) sortent du périmètre de cette extraction : leurs chiffres restent ceux du 7 octobre et sont signalés comme tels dans le tableau. Une démarche ouverte le 6 octobre ne porte aucun territoire dans son libellé ; elle est rattachée à l'Aude (11), département dont elle est le guichet — confirmation de l'utilisateur, cohérente avec la série Occitanie du 18 septembre où l'Aude était le seul département sans guichet identifié. </p>
+      <h3>Limites</h3>
+      <ul>
+        <li>Le nombre de dossiers déposés est un instantané au 16 octobre 2026 : il continue de croître pour les 48 démarches encore ouvertes. Entre le 7 et le 16 octobre, le total est passé de 36 842 à 55 941 dossiers, pour une seule démarche nouvelle — la hausse vient des dépôts, pas de l'ouverture de guichets.</li>
+        <li>Une démarche régionale (ex. Bretagne) agrège plusieurs départements dans un seul guichet : elle n'est pas comparable terme à terme à une démarche départementale.</li>
+        <li>La recherche par mots clés ne couvre que les démarches qui nomment explicitement le plan ou la crise ; des aides équivalentes portant un autre intitulé local peuvent manquer.</li>
+        <li>Une démarche sans aucun dossier déposé n'apparaît pas dans l'export open data : c'est ce qui avait fait manquer quatre guichets au 7 octobre, désormais retrouvés dans l'extraction directe.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Analyse produite le 7 octobre 2026 à partir de données ouvertes de data.gouv.fr, actualisée le 16 octobre 2026. Les montants d'aide ne figurent dans aucune des deux sources : ni le montant par dossier, ni l'enveloppe par guichet. Le fonds de réarmement agricole est doté de 235 M€ au plan national ; la ventilation complète par région n'a pas été publiée.</footer>
+</div>
+
+<script>
+const TIMELINE = [{"semaine": "2026-08-10", "nouvelles": 0, "dossiers_semaine": 0, "cumul_demarches": 0, "cumul_dossiers": 0}, {"semaine": "2026-08-17", "nouvelles": 0, "dossiers_semaine": 0, "cumul_demarches": 0, "cumul_dossiers": 0}, {"semaine": "2026-08-24", "nouvelles": 0, "dossiers_semaine": 0, "cumul_demarches": 0, "cumul_dossiers": 0}, {"semaine": "2026-08-31", "nouvelles": 0, "dossiers_semaine": 0, "cumul_demarches": 0, "cumul_dossiers": 0}, {"semaine": "2026-09-07", "nouvelles": 1, "dossiers_semaine": 846, "cumul_demarches": 1, "cumul_dossiers": 846}, {"semaine": "2026-09-14", "nouvelles": 9, "dossiers_semaine": 20306, "cumul_demarches": 10, "cumul_dossiers": 21152}, {"semaine": "2026-09-21", "nouvelles": 33, "dossiers_semaine": 18173, "cumul_demarches": 43, "cumul_dossiers": 39325}, {"semaine": "2026-09-28", "nouvelles": 30, "dossiers_semaine": 14892, "cumul_demarches": 73, "cumul_dossiers": 54217}, {"semaine": "2026-10-05", "nouvelles": 6, "dossiers_semaine": 1724, "cumul_demarches": 79, "cumul_dossiers": 55941}, {"semaine": "2026-10-12", "nouvelles": 0, "dossiers_semaine": 0, "cumul_demarches": 79, "cumul_dossiers": 55941}];
+const TERRITORIES = [{"code": "155804", "label": "Bretagne (guichet régional)", "demarches": 1, "dossiers": 8718, "note": "Guichet régional unique couvrant 4 départements ; dossiers non ventilés par département."}, {"code": "156186", "label": "Pays de la Loire (guichet régional)", "demarches": 1, "dossiers": 7798, "note": "Guichet régional unique couvrant 5 départements ; dossiers non ventilés par département."}, {"code": "63", "label": "63 — Puy-de-Dôme", "demarches": 1, "dossiers": 1959, "note": ""}, {"code": "155971", "label": "Corse (guichet régional)", "demarches": 1, "dossiers": 1255, "note": "Guichet régional unique couvrant 2 départements ; dossiers non ventilés par département."}, {"code": "31", "label": "31 — Haute-Garonne", "demarches": 1, "dossiers": 1231, "note": ""}, {"code": "40", "label": "40 — Landes", "demarches": 1, "dossiers": 1137, "note": ""}, {"code": "36", "label": "36 — Indre", "demarches": 1, "dossiers": 1070, "note": ""}, {"code": "48", "label": "48 — Lozère", "demarches": 1, "dossiers": 1034, "note": ""}, {"code": "86", "label": "86 — Vienne", "demarches": 1, "dossiers": 1027, "note": ""}, {"code": "17", "label": "17 — Charente-Maritime", "demarches": 1, "dossiers": 1012, "note": ""}, {"code": "02", "label": "02 — Aisne", "demarches": 1, "dossiers": 955, "note": ""}, {"code": "87", "label": "87 — Haute-Vienne", "demarches": 1, "dossiers": 907, "note": ""}, {"code": "32", "label": "32 — Gers", "demarches": 1, "dossiers": 899, "note": ""}, {"code": "18", "label": "18 — Cher", "demarches": 1, "dossiers": 893, "note": ""}, {"code": "50", "label": "50 — Manche", "demarches": 1, "dossiers": 877, "note": ""}, {"code": "47", "label": "47 — Lot-et-Garonne", "demarches": 1, "dossiers": 859, "note": ""}, {"code": "42", "label": "42 — Loire", "demarches": 1, "dossiers": 846, "note": ""}, {"code": "79", "label": "79 — Deux-Sèvres", "demarches": 1, "dossiers": 837, "note": ""}, {"code": "57", "label": "57 — Moselle", "demarches": 1, "dossiers": 831, "note": ""}, {"code": "33", "label": "33 — Gironde", "demarches": 1, "dossiers": 824, "note": ""}, {"code": "45", "label": "45 — Loiret", "demarches": 1, "dossiers": 812, "note": ""}, {"code": "64", "label": "64 — Pyrénées-Atlantiques", "demarches": 1, "dossiers": 763, "note": ""}, {"code": "76", "label": "76 — Seine-Maritime", "demarches": 1, "dossiers": 728, "note": ""}, {"code": "62", "label": "62 — Pas-de-Calais", "demarches": 1, "dossiers": 667, "note": ""}, {"code": "60", "label": "60 — Oise", "demarches": 1, "dossiers": 658, "note": ""}, {"code": "41", "label": "41 — Loir-et-Cher", "demarches": 1, "dossiers": 655, "note": ""}, {"code": "43", "label": "43 — Haute-Loire", "demarches": 1, "dossiers": 613, "note": ""}, {"code": "03", "label": "03 — Allier", "demarches": 2, "dossiers": 610, "note": ""}, {"code": "01", "label": "01 — Ain", "demarches": 1, "dossiers": 608, "note": ""}, {"code": "52", "label": "52 — Haute-Marne", "demarches": 1, "dossiers": 600, "note": ""}, {"code": "24", "label": "24 — Dordogne", "demarches": 1, "dossiers": 592, "note": ""}, {"code": "61", "label": "61 — Orne", "demarches": 1, "dossiers": 539, "note": ""}, {"code": "37", "label": "37 — Indre-et-Loire", "demarches": 1, "dossiers": 516, "note": ""}, {"code": "51", "label": "51 — Marne", "demarches": 1, "dossiers": 510, "note": ""}, {"code": "65", "label": "65 — Hautes-Pyrénées", "demarches": 1, "dossiers": 509, "note": ""}, {"code": "58", "label": "58 — Nièvre", "demarches": 1, "dossiers": 508, "note": ""}, {"code": "12", "label": "12 — Aveyron", "demarches": 1, "dossiers": 499, "note": ""}, {"code": "71", "label": "71 — Saône-et-Loire", "demarches": 1, "dossiers": 474, "note": ""}, {"code": "34", "label": "34 — Hérault", "demarches": 1, "dossiers": 469, "note": ""}, {"code": "83", "label": "83 — Var", "demarches": 1, "dossiers": 464, "note": ""}, {"code": "81", "label": "81 — Tarn", "demarches": 1, "dossiers": 430, "note": ""}, {"code": "25", "label": "25 — Doubs", "demarches": 1, "dossiers": 425, "note": ""}, {"code": "69", "label": "69 — Rhône", "demarches": 1, "dossiers": 416, "note": ""}, {"code": "89", "label": "89 — Yonne", "demarches": 1, "dossiers": 407, "note": ""}, {"code": "59", "label": "59 — Nord", "demarches": 1, "dossiers": 406, "note": ""}, {"code": "16", "label": "16 — Charente", "demarches": 1, "dossiers": 399, "note": ""}, {"code": "70", "label": "70 — Haute-Saône", "demarches": 1, "dossiers": 399, "note": ""}, {"code": "82", "label": "82 — Tarn-et-Garonne", "demarches": 1, "dossiers": 392, "note": ""}, {"code": "55", "label": "55 — Meuse", "demarches": 1, "dossiers": 392, "note": ""}, {"code": "972", "label": "972 — Martinique", "demarches": 1, "dossiers": 392, "note": ""}, {"code": "38", "label": "38 — Isère", "demarches": 1, "dossiers": 368, "note": ""}, {"code": "88", "label": "88 — Vosges", "demarches": 1, "dossiers": 358, "note": ""}, {"code": "67", "label": "67 — Bas-Rhin", "demarches": 1, "dossiers": 347, "note": ""}, {"code": "54", "label": "54 — Meurthe-et-Moselle", "demarches": 1, "dossiers": 329, "note": ""}, {"code": "26", "label": "26 — Drôme", "demarches": 2, "dossiers": 310, "note": ""}, {"code": "27", "label": "27 — Eure", "demarches": 1, "dossiers": 300, "note": ""}, {"code": "28", "label": "28 — Eure-et-Loir", "demarches": 1, "dossiers": 297, "note": ""}, {"code": "14", "label": "14 — Calvados", "demarches": 1, "dossiers": 262, "note": ""}, {"code": "04", "label": "04 — Alpes-de-Haute-Provence", "demarches": 1, "dossiers": 248, "note": ""}, {"code": "66", "label": "66 — Pyrénées-Orientales", "demarches": 1, "dossiers": 248, "note": ""}, {"code": "10", "label": "10 — Aube", "demarches": 1, "dossiers": 225, "note": ""}, {"code": "21", "label": "21 — Côte-d'Or", "demarches": 1, "dossiers": 218, "note": ""}, {"code": "09", "label": "09 — Ariège", "demarches": 1, "dossiers": 209, "note": ""}, {"code": "46", "label": "46 — Lot", "demarches": 1, "dossiers": 181, "note": ""}, {"code": "08", "label": "08 — Ardennes", "demarches": 1, "dossiers": 167, "note": ""}, {"code": "39", "label": "39 — Jura", "demarches": 1, "dossiers": 164, "note": ""}, {"code": "80", "label": "80 — Somme", "demarches": 2, "dossiers": 155, "note": ""}, {"code": "07", "label": "07 — Ardèche", "demarches": 1, "dossiers": 136, "note": ""}, {"code": "155983", "label": "Île-de-France (guichet régional)", "demarches": 1, "dossiers": 120, "note": "Guichet régional unique couvrant 8 départements ; dossiers non ventilés par département."}, {"code": "84", "label": "84 — Vaucluse", "demarches": 1, "dossiers": 97, "note": ""}, {"code": "11", "label": "11 — Aude", "demarches": 1, "dossiers": 90, "note": ""}, {"code": "05", "label": "05 — Hautes-Alpes", "demarches": 1, "dossiers": 74, "note": ""}, {"code": "74", "label": "74 — Haute-Savoie", "demarches": 1, "dossiers": 65, "note": ""}, {"code": "90", "label": "90 — Territoire de Belfort", "demarches": 1, "dossiers": 64, "note": ""}, {"code": "30", "label": "30 — Gard", "demarches": 1, "dossiers": 57, "note": ""}, {"code": "13", "label": "13 — Bouches-du-Rhône", "demarches": 1, "dossiers": 31, "note": ""}];
+const DETAIL = [{"numero": "156669", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-DDT09", "organisme": "", "dept": "09 — Ariège", "etat": "publiee", "pub": "2026-09-29", "clot": "", "dossiers": 209, "url": ""}, {"numero": "157491", "titre": "Fonds de réarmement agricole - Bas-Rhin", "organisme": "", "dept": "67 — Bas-Rhin", "etat": "publiee", "pub": "2026-09-29", "clot": "", "dossiers": 347, "url": ""}, {"numero": "156676", "titre": "DDT 71 - Département de la Saône et Loire - Fonds de réarmement - Plan Climat, Adaptation, Sécheresse, Incendie", "organisme": "", "dept": "71 — Saône-et-Loire", "etat": "close", "pub": "2026-09-24", "clot": "2026-10-12", "dossiers": 474, "url": ""}, {"numero": "157870", "titre": "Haute-Savoie -  Fonds d'urgence agricole - sécheresse et canicule 2026", "organisme": "", "dept": "74 — Haute-Savoie", "etat": "publiee", "pub": "2026-10-05", "clot": "", "dossiers": 65, "url": ""}, {"numero": "155791", "titre": "DDT42 - Fonds de réarmement du Plan CASI (Climat, Adaptation, Sécheresse, Incendie)  ", "organisme": "Direction Départementale des Territoires de la Loire", "dept": "42 — Loire", "etat": "close", "pub": "2026-09-11", "clot": "2026-10-14", "dossiers": 846, "url": "https://demarche.numerique.gouv.fr/commencer/ddt42-fonds-de-rearmement-du-plan-casi-climat-adap"}, {"numero": "156015", "titre": "Fonds de réarmement - Département de la Marne  — chiffres au 7 octobre", "organisme": "DIRECTION DEPARTEMENTALE TERRITOIRES MARNE (DDT)", "dept": "51 — Marne", "etat": "publiee", "pub": "2026-09-14", "clot": "", "dossiers": 510, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-departement-de-la-marne"}, {"numero": "155771", "titre": "FONDS DE RÉARMEMENT AGRICOLE 04 - SÉCHERESSE ET CANICULE 2026", "organisme": "DDT04", "dept": "04 — Alpes-de-Haute-Provence", "etat": "close", "pub": "2026-09-15", "clot": "2026-09-30", "dossiers": 248, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-rearmement-agricole-04-secheresse-cani"}, {"numero": "155804", "titre": "Bretagne - Bénéficier du fonds de réarmement agricole", "organisme": "DRAAF Bretagne, Préfet de la région Bretagne, Ministère de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire", "dept": "Bretagne — 22 · 29 · 35 · 56", "etat": "close", "pub": "2026-09-16", "clot": "2026-10-01", "dossiers": 8718, "url": "https://demarche.numerique.gouv.fr/commencer/bretagne-beneficier-du-fonds-de-rearmement-agricol"}, {"numero": "155994", "titre": "Plan CASI - Fonds de Réarmement Agricole - Manche", "organisme": "Direction Départementale des Territoires et de la Mer", "dept": "50 — Manche", "etat": "publiee", "pub": "2026-09-17", "clot": "", "dossiers": 877, "url": "https://demarche.numerique.gouv.fr/commencer/casi50"}, {"numero": "138489", "titre": "Fonds d'urgence plan CASI (Climat • Adaptation • Sécheresse • Incendies)  — chiffres au 7 octobre", "organisme": "Service Agriculture Forêt et Espaces Naturels", "dept": "16 — Charente", "etat": "publiee", "pub": "2026-09-17", "clot": "", "dossiers": 399, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-plan-casi"}, {"numero": "156288", "titre": "FONDS DE RÉARMEMENT AGRICOLE 83 - INCENDIE, SÉCHERESSE ET CANICULE 2026", "organisme": "DDTM du Var", "dept": "83 — Var", "etat": "close", "pub": "2026-09-17", "clot": "2026-10-12", "dossiers": 464, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-83-incendie-secheress"}, {"numero": "156653", "titre": "Demande d'aide sur le fonds de réarmement agricole en Haute-Saône", "organisme": "Préfecture de la Haute-Saône", "dept": "70 — Haute-Saône", "etat": "close", "pub": "2026-09-18", "clot": "2026-10-12", "dossiers": 399, "url": "https://demarche.numerique.gouv.fr/commencer/demande-d-aide-sur-le-fonds-de-rearmement-agricole-2"}, {"numero": "156186", "titre": "Fonds de réarmement agricole dans les départements de la région des Pays de la Loire", "organisme": "Service régional de l’économie agricole et des filières\t", "dept": "Pays de la Loire — 44 · 49 · 53 · 72 · 85", "etat": "close", "pub": "2026-09-18", "clot": "2026-10-04", "dossiers": 7798, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-dpt-pdl"}, {"numero": "155730", "titre": "Fonds de réarmement agricole - département du Cher", "organisme": "Direction départementale des territoires du Cher, Préfecture du Cher, Ministère de l'Agriculture et de la Souveraineté Alimentaire", "dept": "18 — Cher", "etat": "close", "pub": "2026-09-20", "clot": "2026-10-05", "dossiers": 893, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-departement-du-cher"}, {"numero": "156229", "titre": "DDT 43 - Plan national Climat , Adaptation, Sécheresse, Incendie (CASI) : demande d’aide pour relancer la production agricole", "organisme": "Direction départementale des territoires (DDT) - Haute-Loire", "dept": "43 — Haute-Loire", "etat": "publiee", "pub": "2026-09-21", "clot": "", "dossiers": 613, "url": "https://demarche.numerique.gouv.fr/commencer/4bedac6c-60f8-4e8d-854e-12001e149e7b"}, {"numero": "156864", "titre": "Demande d'aide exceptionnelle \"Fonds de réarmement agricole\" 2026 - Eure", "organisme": "d’un excellent organisme", "dept": "27 — Eure", "etat": "publiee", "pub": "2026-09-21", "clot": "", "dossiers": 300, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-eure"}, {"numero": "156394", "titre": "Demande d'aide exceptionnelle \"Fonds de réarmement agricole\" 2026 - Seine-Maritime", "organisme": "Direction Départementale des Territoires et de la Mer de Seine-Maritime", "dept": "76 — Seine-Maritime", "etat": "publiee", "pub": "2026-09-21", "clot": "", "dossiers": 728, "url": "https://demarche.numerique.gouv.fr/commencer/fra-76"}, {"numero": "156503", "titre": "Demande d'aide exceptionnelle \"Fonds de réarmement agricole\" 2026 - Orne", "organisme": "Direction départementale des territoires de l'Orne", "dept": "61 — Orne", "etat": "publiee", "pub": "2026-09-21", "clot": "", "dossiers": 539, "url": "https://demarche.numerique.gouv.fr/commencer/demande-d-aide-exceptionnelle-fonds-de-rearmement-orne"}, {"numero": "156236", "titre": "Demande d'aide exceptionnelle \"Fonds de réarmement agricole\" 2026 - 014", "organisme": "Direction départementale des territoires et de la mer (DDTM) - Calvados", "dept": "14 — Calvados", "etat": "publiee", "pub": "2026-09-21", "clot": "", "dossiers": 262, "url": "https://demarche.numerique.gouv.fr/commencer/demande-d-aide-exceptionnelle-fonds-de-rearmement-14"}, {"numero": "156794", "titre": "Fonds de réarmement agricole PUY-DE-DOME", "organisme": "Direction Départementale des Territoires du Puy-de-Dôme", "dept": "63 — Puy-de-Dôme", "etat": "close", "pub": "2026-09-21", "clot": "2026-10-04", "dossiers": 1959, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-puy-de-dome"}, {"numero": "156889", "titre": "DDT58-Plan CASI-Fonds de réarmement agricole", "organisme": "DDT58", "dept": "58 — Nièvre", "etat": "close", "pub": "2026-09-22", "clot": "2026-10-15", "dossiers": 508, "url": "https://demarche.numerique.gouv.fr/commencer/ddt58-plan-casi-fonds-de-rearmement-agricole"}, {"numero": "156892", "titre": "DDTM62 - Fonds de réarmement agricole suite à  la sécheresse 2026", "organisme": "Direction départementale des territoires et de la mer du Pas-de-Calais", "dept": "62 — Pas-de-Calais", "etat": "close", "pub": "2026-09-22", "clot": "2026-10-08", "dossiers": 667, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm62-fonds-de-rearmement-agricole-secheresse"}, {"numero": "156546", "titre": "DDT 25 - Plan Climat, Adaptation, Sécheresse, Incendie- Mise en place d'un fonds d'appui à la trésorerie", "organisme": "Service économie agricole", "dept": "25 — Doubs", "etat": "close", "pub": "2026-09-22", "clot": "2026-10-13", "dossiers": 425, "url": "https://demarche.numerique.gouv.fr/commencer/ddt-25-plan-casi-aide-tresorerie"}, {"numero": "156658", "titre": "Demande Fonds d'urgence CASI Hautes-Pyrénées (climat-adaptation-sécheresse-incendies)-2026-DDT65", "organisme": "Service économie agricole", "dept": "65 — Hautes-Pyrénées", "etat": "close", "pub": "2026-09-23", "clot": "2026-10-15", "dossiers": 509, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-hautes-pyrenees-clima"}, {"numero": "157092", "titre": "DDTM59 - Fonds de réarmement agricole suite à la sécheresse et à la canicule en 2026", "organisme": "Direction Départementale des Territoires et de la Mer du Nord, Ministère de l'Agriculutre et de la Souverainté Alimentaire", "dept": "59 — Nord", "etat": "close", "pub": "2026-09-23", "clot": "2026-10-12", "dossiers": 406, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm59-fonds-de-rearmement-agricole"}, {"numero": "156667", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-DDT12", "organisme": "DIRECTION DEPARTEMENTALE DES TERRITOIRES DE L'AVEYRON", "dept": "12 — Aveyron", "etat": "publiee", "pub": "2026-09-23", "clot": "", "dossiers": 499, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-climat-adaptation-sec"}, {"numero": "156585", "titre": "Fonds de réarmement agricole - Allier - guichet à destination des jeunes agriculteurs et des nouveaux installés", "organisme": "Direction Départementale des Territoires de l'Allier, ministère de l'agriculture et de la souveraineté alimentaire", "dept": "03 — Allier", "etat": "close", "pub": "2026-09-23", "clot": "2026-10-14", "dossiers": 399, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-allier-guichet-ja-ni"}, {"numero": "156664", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-Gers", "organisme": "Direction départementale des territoires du Gers", "dept": "32 — Gers", "etat": "close", "pub": "2026-09-23", "clot": "2026-10-14", "dossiers": 899, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-rearmement-2026-gers"}, {"numero": "156285", "titre": "Demande d'aide : Fonds de réarmement agricole - Eure-et-Loir ", "organisme": "Préfecture d'Eure-et-Loir, MINISTERE DE LA TRANSITION ECOLOGIQUE, DE LA BIODIVERSITE ET DES NEGOCIATIONS INTERNATIONALES SUR LE CLIMAT ET LA NATURE, MINISTERE DE L'AGRICULTURE? DE L'AGROALIMENTAIRE ET DE LA SOUVERAINETE ALIMENTAIRE", "dept": "28 — Eure-et-Loir", "etat": "publiee", "pub": "2026-09-24", "clot": "", "dossiers": 297, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-rearmement-agricole-28"}, {"numero": "157174", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-DDT82", "organisme": "Direction départementale des territoires (DDT) - Tarn-et-Garonne", "dept": "82 — Tarn-et-Garonne", "etat": "publiee", "pub": "2026-09-24", "clot": "", "dossiers": 392, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-climat-adaptation-sec-2"}, {"numero": "157229", "titre": "DDT 02 - Demande d'indemnisation au titre du fonds de réarmement agricole", "organisme": "Service agriculture", "dept": "02 — Aisne", "etat": "close", "pub": "2026-09-24", "clot": "2026-10-11", "dossiers": 955, "url": "https://demarche.numerique.gouv.fr/commencer/ddt-02-demande-d-indemnisation-au-titre-du-fonds-d-urgence-secheresse"}, {"numero": "156540", "titre": "Fonds de réarmement agricole Meurthe-et-Moselle - 2026", "organisme": "Service Agriculture Biodiversité Espace Rural", "dept": "54 — Meurthe-et-Moselle", "etat": "close", "pub": "2026-09-24", "clot": "2026-10-09", "dossiers": 329, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-meurthe-et-moselle-20"}, {"numero": "156971", "titre": "Indre - Fonds d'urgence agricole accordé dans le cadre du CASI ", "organisme": "Direction départementale des territoires (DDT) - Indre", "dept": "36 — Indre", "etat": "close", "pub": "2026-09-24", "clot": "2026-10-13", "dossiers": 1070, "url": "https://demarche.numerique.gouv.fr/commencer/indre-fonds-urgence-agricole-casi"}, {"numero": "156896", "titre": "Fonds d’urgence agricole Climat- Adaptation Sécheresse Incendies - Jura", "organisme": "Direction départementale des territoires (DDT) - Jura", "dept": "39 — Jura", "etat": "close", "pub": "2026-09-24", "clot": "2026-10-14", "dossiers": 164, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-agricole-climat-adaptation-sechere"}, {"numero": "155983", "titre": "Fonds de réarmement de l'agriculture en Île-de-France face à la sècheresse  — chiffres au 7 octobre", "organisme": "Direction régionale et interdépartementale de l'alimentation, de l'agriculture et de la forêt - Île-de-France", "dept": "Île-de-France — 75 · 77 · 78 · 91 · 92 · 93 · 94 · 95", "etat": "publiee", "pub": "2026-09-24", "clot": "", "dossiers": 120, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-secheresse-ile-de-france"}, {"numero": "156665", "titre": "Demande Fonds de réarmement CASI (climat-adaptation-sécheresse-incendies)-2026-DDT31", "organisme": "Direction départementale des territoires (DDT) - Haute-Garonne", "dept": "31 — Haute-Garonne", "etat": "publiee", "pub": "2026-09-24", "clot": "", "dossiers": 1231, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-de-rearmement-casi-31"}, {"numero": "157152", "titre": "DDT 21 - Plan Climat, Adaptation, Sécheresse, Incendie- Fonds de réarmement", "organisme": "Direction départementale des territoires, préfecture de Côte d'Or, Ministère de l'agriculture", "dept": "21 — Côte-d'Or", "etat": "publiee", "pub": "2026-09-24", "clot": "", "dossiers": 218, "url": "https://demarche.numerique.gouv.fr/commencer/fonds_rearmement_cote_dor"}, {"numero": "155971", "titre": "DRAAF de Corse - Fonds de réarmement du Plan CASI (Climat, Adaptation, Sécheresse, Incendie)  ", "organisme": "DRAAF de Corse", "dept": "Corse — 2A · 2B", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-15", "dossiers": 1255, "url": "https://demarche.numerique.gouv.fr/commencer/draaf-de-corse-fonds-de-rearmement-du-plan-casi-cl"}, {"numero": "156689", "titre": "Fonds de réarmement agricole 2026 Ardennes - aide exceptionnelle de trésorerie jeunes agriculteurs/éleveurs", "organisme": "Direction départementale des territoires (DDT) - Ardennes", "dept": "08 — Ardennes", "etat": "publiee", "pub": "2026-09-25", "clot": "", "dossiers": 167, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-2026-ardennes-aide-ex"}, {"numero": "157061", "titre": "Demande d'aide exceptionnelle \"Fonds de réarmement agricole\" 2026 - HAUTES-ALPES 05", "organisme": "Direction Départementale des Territoires des Hautes-Alpes", "dept": "05 — Hautes-Alpes", "etat": "publiee", "pub": "2026-09-25", "clot": "", "dossiers": 74, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-hautes-alpes-05"}, {"numero": "157325", "titre": "Fonds de réarmement agricole Vosges - 2026", "organisme": "Direction départementale des territoires (DDT) - Vosges", "dept": "88 — Vosges", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-12", "dossiers": 358, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-vosges-2026"}, {"numero": "156905", "titre": "Fonds de réarmement agricole", "organisme": "DDT de la Meuse, Préfecture de la Meuse, Ministère de l'intérieur", "dept": "55 — Meuse", "etat": "publiee", "pub": "2026-09-25", "clot": "", "dossiers": 392, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-meuse"}, {"numero": "157448", "titre": "DDT 57 - Fonds de réarmement agricole suite à la sécheresse 2026", "organisme": "MASA", "dept": "57 — Moselle", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-07", "dossiers": 831, "url": "https://demarche.numerique.gouv.fr/commencer/ddt-57-fonds-de-rearmement-agricole"}, {"numero": "156976", "titre": "Demande d'aide du fonds de réarmement agricole en Haute-Marne", "organisme": "Direction départementale des territoires (DDT) - Haute-Marne", "dept": "52 — Haute-Marne", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-12", "dossiers": 600, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-haute-marne"}, {"numero": "156980", "titre": "DDT 90 - Plan Climat, Adaptation, Sécheresse, Incendie - Mise en place du fonds de réarmement agricole.", "organisme": "Direction départementale des Territoires du Territoire de Belfort", "dept": "90 — Territoire de Belfort", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-12", "dossiers": 64, "url": "https://demarche.numerique.gouv.fr/commencer/ddt-90-plan-casi"}, {"numero": "156663", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-DDTM34", "organisme": "DDTM de l'Hérault", "dept": "34 — Hérault", "etat": "close", "pub": "2026-09-25", "clot": "2026-10-12", "dossiers": 469, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-urgence-casi-2026-ddtm34"}, {"numero": "156857", "titre": "Fonds d'urgence sécheresse canicule 2026 - Charente-Maritime", "organisme": "Direction départementale des territoires et de la mer (DDTM) - Charente-Maritime", "dept": "17 — Charente-Maritime", "etat": "publiee", "pub": "2026-09-28", "clot": "", "dossiers": 1012, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-secheresse-canicule-2026-charente-maritime"}, {"numero": "157520", "titre": "DDTM66 - Fonds d'urgence sécheresse (plan CASI)", "organisme": "Direction départementale des territoires et de la mer (DDTM) - Pyrénées-Orientales", "dept": "66 — Pyrénées-Orientales", "etat": "publiee", "pub": "2026-09-28", "clot": "", "dossiers": 248, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm66-fonds-d-urgence-secheresse-plan-casi"}, {"numero": "157135", "titre": "DDT60 - CASI - Fonds de réarmement agricole ", "organisme": "DDT Oise", "dept": "60 — Oise", "etat": "close", "pub": "2026-09-28", "clot": "2026-10-14", "dossiers": 658, "url": "https://demarche.numerique.gouv.fr/commencer/ddt60-casi-fonds-de-rearmement-agricole"}, {"numero": "156661", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies) - 2026 - DDT 48", "organisme": "Direction départementale des territoires (DDT) - Lozère", "dept": "48 — Lozère", "etat": "close", "pub": "2026-09-28", "clot": "2026-10-14", "dossiers": 1034, "url": "https://demarche.numerique.gouv.fr/commencer/plan-casi-fonds-rearmement48"}, {"numero": "157221", "titre": "Fonds de réarmement agricole en Vaucluse 2026", "organisme": "DDT de Vaucluse", "dept": "84 — Vaucluse", "etat": "publiee", "pub": "2026-09-28", "clot": "", "dossiers": 97, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-en-vaucluse-2026"}, {"numero": "157671", "titre": "DDTM80 - CASI - Fonds de réarmement agricole - Maraîchage", "organisme": "Direction Départementale des Territoires et de la Mer de la Somme", "dept": "80 — Somme", "etat": "publiee", "pub": "2026-09-29", "clot": "", "dossiers": 150, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm80-casi--maraichage"}, {"numero": "156870", "titre": "Fonds de réarmement agricole - Allier - guichet d'urgence pour les exploitations en crise financière", "organisme": "Direction Départementale des Territoires de l'Allier, ministère de l'agriculture et de la souveraineté alimentaire", "dept": "03 — Allier", "etat": "publiee", "pub": "2026-09-29", "clot": "", "dossiers": 211, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-allier-guichet-volet-2"}, {"numero": "157355", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies) - Département du Tarn ", "organisme": "Direction Départementale du Tarn", "dept": "81 — Tarn", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 430, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-climat-adaptation-sec-4"}, {"numero": "157359", "titre": "Fonds d'urgence agricole 87 _ Plan CASI (Climat • Adaptation • Sécheresse • Incendies)", "organisme": "Direction départementale des territoires (DDT) - Haute-Vienne", "dept": "87 — Haute-Vienne", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 907, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-agricole-87-_-plan-casi-climat-ada"}, {"numero": "157175", "titre": "Fonds d'urgence plan CASI (Climat • Adaptation • Sécheresse • Incendies) - LOT-ET-GARONNE", "organisme": "SEA, DDT, Préfecture de Lot-et-Garonne, ministère en charge de l'agriculture", "dept": "47 — Lot-et-Garonne", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 859, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-plan-casi-climat-adaptation-secher"}, {"numero": "157184", "titre": "Fonds d'urgence CASI en Gironde - 2026", "organisme": "Ministère de l'Agriculture, de l'Agro-alimentaire et de la Souveraineté alimentaire", "dept": "33 — Gironde", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 824, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-casi-gironde"}, {"numero": "156662", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)-2026-DDT46", "organisme": "MINISTERE DE LA TRANSITION ECOLOGIQUE, DE LA BIODIVERSITE ET DES NEGOCIATIONS INTERNATIONALES SUR LE CLIMAT ET LA NATURE", "dept": "46 — Lot", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 181, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-climat-adaptation-sec-5"}, {"numero": "156999", "titre": "Drôme - Fonds de réarmement agricole - AXE 1 - Soutien aux exploitations en difficulté", "organisme": "DDT, préfecture de la Drôme, ministère en charge de l'agriculture", "dept": "26 — Drôme", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 81, "url": "https://demarche.numerique.gouv.fr/commencer/drome-fonds-de-rearmement-agricole-axe-1"}, {"numero": "157687", "titre": "Ardèche - Fonds de réarmement - sécheresse et canicule 2026  — chiffres au 7 octobre", "organisme": "Direction départementale des territoires de l'Ardèche", "dept": "07 — Ardèche", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 136, "url": "https://demarche.numerique.gouv.fr/commencer/ardeche-fonds-de-rearmement-secheresse-et-canicule"}, {"numero": "157664", "titre": "Drôme - Fonds de réarmement agricole - AXE 2 ", "organisme": "DDT, préfecture de la Drôme, ministère en charge de l'agriculture", "dept": "26 — Drôme", "etat": "publiee", "pub": "2026-09-30", "clot": "", "dossiers": 229, "url": "https://demarche.numerique.gouv.fr/commencer/drome-fonds-de-rearmement-agricole-axe-2"}, {"numero": "156652", "titre": "Loir-et-Cher - Fonds d'urgence sécheresse du Plan CASI (Climat, Adaptation, Sécheresse, Incendie)  ", "organisme": "Direction Départementale des Territoires de Loir-et-Cher", "dept": "41 — Loir-et-Cher", "etat": "close", "pub": "2026-10-01", "clot": "2026-10-15", "dossiers": 655, "url": "https://demarche.numerique.gouv.fr/commencer/loir-et-cher-fonds-d-urgence-secheresse-du-plan-ca"}, {"numero": "157648", "titre": "Fonds de réarmement (plan CASI) - LOIRET", "organisme": "DDT 45", "dept": "45 — Loiret", "etat": "close", "pub": "2026-10-01", "clot": "2026-10-15", "dossiers": 812, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-plan-casi-loiret"}, {"numero": "157831", "titre": "DDT69 - Fonds de réarmement agricole du plan CASI (Canicule-Adaptation-Sécheresse-Incendie)", "organisme": "DDT du Rhône, MASA", "dept": "69 — Rhône", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 416, "url": "https://demarche.numerique.gouv.fr/commencer/ddt69-fonds-de-rearmement-agricole-du-plan-casi-ca"}, {"numero": "156175", "titre": "Fonds d’urgence - plan CASI - Vienne 2026", "organisme": "Direction départementale des territoires de la Vienne, préfécture de la Vienne, ministère en charge de l'agriculture", "dept": "86 — Vienne", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 1027, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-plan-casi-vienne-2026"}, {"numero": "157846", "titre": "Fonds de réarmement agricole dans le cadre du plan CASI,  département de l'Ain", "organisme": "Direction départementale des territoires", "dept": "01 — Ain", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 608, "url": "https://demarche.numerique.gouv.fr/commencer/fonds_de_rearmement_plan_casi_ain"}, {"numero": "157661", "titre": "PLAN CASI : Fonds d’urgence sécheresse (Fonds de réarmement agricole) - Département d'Indre-et-Loire", "organisme": "Service de l'agriculture", "dept": "37 — Indre-et-Loire", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 516, "url": "https://demarche.numerique.gouv.fr/commencer/plan-casi-37"}, {"numero": "157060", "titre": "Fonds de réarmement agricole pour la Martinique - Plan Climat, Adaptation, Sécheresse, Incendie (CASI)", "organisme": "Direction de l'alimentation, de l'agriculture et de la forêt de Martinique", "dept": "972 — Martinique", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 392, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-pour-la-martinique-pl"}, {"numero": "157133", "titre": "Fonds d'urgence agricole - Dordogne", "organisme": "Direction Départementale des Territoires de la Dordogne", "dept": "24 — Dordogne", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 592, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-agricole-dordogne"}, {"numero": "157180", "titre": "DDTM40 : Plan CASI, Fonds de réarmement agricole", "organisme": "DDTM des Landes", "dept": "40 — Landes", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 1137, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm40-plan-casi-fonds-de-rearmement-agricole"}, {"numero": "157315", "titre": "AUBE (10) : Fonds de réarmement agricole", "organisme": "DDT AUBE", "dept": "10 — Aube", "etat": "publiee", "pub": "2026-10-01", "clot": "", "dossiers": 225, "url": "https://demarche.numerique.gouv.fr/commencer/aube-10-fonds-de-rearmement-agricole"}, {"numero": "156666", "titre": "Demande Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies)  - 2026 - DDTM30", "organisme": "DDTM du Gard", "dept": "30 — Gard", "etat": "publiee", "pub": "2026-10-02", "clot": "", "dossiers": 57, "url": "https://demarche.numerique.gouv.fr/commencer/gard-fonds-de-rearmement"}, {"numero": "158220", "titre": "DDTM80 - CASI - Fonds de réarmement agricole  — chiffres au 7 octobre", "organisme": "Direction Départementale des Territoires et de la Mer de la Somme", "dept": "80 — Somme", "etat": "publiee", "pub": "2026-10-02", "clot": "", "dossiers": 5, "url": "https://demarche.numerique.gouv.fr/commencer/ddtm80-casi"}, {"numero": "157618", "titre": "Demande d'aide Fonds d'urgence CASI (climat-adaptation-sécheresse-incendies) - 2026 - DDT79", "organisme": "Direction départementale des territoires (DDT) - Deux-Sèvres", "dept": "79 — Deux-Sèvres", "etat": "publiee", "pub": "2026-10-02", "clot": "", "dossiers": 837, "url": "https://demarche.numerique.gouv.fr/commencer/demande-fonds-d-urgence-casi-climat-adaptation-sec-6"}, {"numero": "157867", "titre": "Fonds de réarmement agricole dans les Bouches-du-Rhône 2026", "organisme": "DIRECTION DEPARTEMENTALE DES TERRITOIRES ET DE LA MER BOUCHES-DU-RHONE (DDTM 13)", "dept": "13 — Bouches-du-Rhône", "etat": "publiee", "pub": "2026-10-05", "clot": "", "dossiers": 31, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-de-rearmement-agricole-dans-les-bouches-du-r"}, {"numero": "157594", "titre": "DDT 38 - Plan CASI : demande d’aide fonds de relance et de réarmement agricole", "organisme": "Direction départementale des territoires (DDT) - Isère", "dept": "38 — Isère", "etat": "publiee", "pub": "2026-10-05", "clot": "", "dossiers": 368, "url": "https://demarche.numerique.gouv.fr/commencer/ddt-38-plan-casi-fonds-rearmement"}, {"numero": "156487", "titre": "Fonds d'urgence - Plan CASI - Pyrénées-Atlantiques (64)", "organisme": "DDTM, Prefecture des Pyrénees-Atlantiques", "dept": "64 — Pyrénées-Atlantiques", "etat": "publiee", "pub": "2026-10-05", "clot": "", "dossiers": 763, "url": "https://demarche.numerique.gouv.fr/commencer/fonds-d-urgence-casi-64"}, {"numero": "155979", "titre": "Demande d'aide sur le fonds de réarmement agricole dans l'Yonne", "organisme": "DDT 89", "dept": "89 — Yonne", "etat": "close", "pub": "2026-10-06", "clot": "2026-10-09", "dossiers": 407, "url": "https://demarche.numerique.gouv.fr/commencer/demande-d-aide-sur-le-fonds-de-rearmement-agricole"}, {"numero": "156668", "titre": "Demande Fonds d'urgence CASI (Climat - Adaptation - Sécheresse - Incendies)", "organisme": "", "dept": "11 — Aude", "etat": "publiee", "pub": "2026-10-06", "clot": "", "dossiers": 90, "url": ""}];
+
+const TERRITOIRES_COUVERTS = 91; // départements réellement couverts, Corse comptée comme 2A + 2B (2 départements) ; 4 guichets régionaux dépliés sur leurs départements membres
+const MOIS = ["jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"];
+function fmtWeek(iso){ const d = new Date(iso+"T00:00:00"); return d.getDate()+" "+MOIS[d.getMonth()]; }
+function fmtDate(iso){ if(!iso) return "—"; const d = new Date(iso+"T00:00:00"); return d.getDate().toString().padStart(2,"0")+"/"+(d.getMonth()+1).toString().padStart(2,"0"); }
+function N(v){ return v.toLocaleString("fr-FR"); }
+
+// KPIs
+const totalDossiers = DETAIL.reduce((s,r)=>s+r.dossiers,0);
+const nClose = DETAIL.filter(r=>r.etat==="close").length;
+document.getElementById("kpiN").textContent = N(DETAIL.length);
+document.getElementById("kpiDossiers").textContent = N(totalDossiers);
+document.getElementById("kpiTerr").textContent = N(TERRITOIRES_COUVERTS);
+document.getElementById("kpiClose").textContent = N(nClose);
+
+// timeline chart
+(function(){
+  const chart = document.getElementById("tlChart"), axis = document.getElementById("tlAxis"), cumul = document.getElementById("tlCumul"), note = document.getElementById("tlNote");
+  const max = Math.max(...TIMELINE.map(w=>w.nouvelles)) || 1;
+  chart.innerHTML = TIMELINE.map(w=>{
+    const h = w.nouvelles>0 ? Math.max(6, w.nouvelles/max*120) : 2;
+    return `<div class="tl-col"><div class="tl-bar" data-v="${w.nouvelles>0?w.nouvelles:''}" style="height:${h}px"></div></div>`;
+  }).join("");
+  axis.innerHTML = TIMELINE.map(w=>`<div>${fmtWeek(w.semaine)}</div>`).join("");
+  const last = TIMELINE[TIMELINE.length-1];
+  cumul.innerHTML = `<span>Démarches cumulées : <b>${N(last.cumul_demarches)}</b></span><span>Dossiers cumulés : <b>${N(last.cumul_dossiers)}</b></span>`;
+  note.textContent = "Première démarche publiée le 11 septembre, six jours après la circulaire ; le pic tombe les semaines du 21 et du 28 septembre, quand les cellules départementales rendent leurs critères.";
+})();
+
+// territory ranking (top 12 + rest summarized)
+(function(){
+  const list = document.getElementById("terrList"), more = document.getElementById("terrMore");
+  const top = TERRITORIES.slice(0,12);
+  const max = top[0] ? top[0].dossiers : 1;
+  list.innerHTML = top.map(t=>`
+    <div class="t-row">
+      <span class="t-label" title="${t.note||t.label}">${t.label}${t.note?`<span class="t-sub">${t.note}</span>`:''}</span>
+      <span class="t-track"><span class="t-fill" style="width:${Math.max(2,t.dossiers/max*100)}%"></span></span>
+      <span class="t-val">${N(t.dossiers)}</span>
+    </div>`).join("");
+  const restN = TERRITORIES.length - top.length;
+  const restD = TERRITORIES.slice(12).reduce((s,t)=>s+t.dossiers,0);
+  if(restN>0) more.textContent = `+ ${restN} autres territoires, ${N(restD)} dossiers déposés (détail ci-dessous).`;
+})();
+
+// detail table
+(function(){
+  const body = document.getElementById("detailBody"), rowCount = document.getElementById("rowCount");
+  const search = document.getElementById("search"), filterEtat = document.getElementById("filterEtat");
+  let sort = {key:"dossiers", dir:-1};
+  let rows = DETAIL.slice();
+
+  function apply(){
+    let r = DETAIL.slice();
+    const q = search.value.trim().toLowerCase();
+    if(q) r = r.filter(x => (x.dept+" "+x.titre+" "+x.organisme).toLowerCase().includes(q));
+    const et = filterEtat.value;
+    if(et) r = r.filter(x => x.etat === et);
+    r.sort((a,b)=>{
+      let av = a[sort.key], bv = b[sort.key];
+      if(typeof av === "string"){ av = av.toLowerCase(); bv = bv.toLowerCase(); }
+      if(av < bv) return -1*sort.dir; if(av > bv) return 1*sort.dir; return 0;
+    });
+    rows = r;
+    render();
+  }
+
+  function render(){
+    rowCount.textContent = N(rows.length);
+    body.innerHTML = rows.map(r=>`
+      <tr>
+        <td>${r.dept}</td>
+        <td class="titre-cell"><a href="${r.url}" target="_blank" rel="noopener">${r.titre}</a><div class="count" style="margin-left:0">${r.organisme}</div></td>
+        <td><span class="pill ${r.etat}">${r.etat==="publiee"?"Publiée":"Close"}</span></td>
+        <td>${fmtDate(r.pub)}</td>
+        <td>${fmtDate(r.clot)}</td>
+        <td class="num">${N(r.dossiers)}</td>
+      </tr>`).join("");
+  }
+
+  document.querySelectorAll("thead th[data-key]").forEach(th=>{
+    th.addEventListener("click", ()=>{
+      const key = th.dataset.key;
+      if(sort.key===key) sort.dir *= -1; else sort = {key, dir:1};
+      apply();
+    });
+  });
+  search.addEventListener("input", apply);
+  filterEtat.addEventListener("change", apply);
+  apply();
+})();
+</script>
+
+</body></html>
