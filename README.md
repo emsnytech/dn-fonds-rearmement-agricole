@@ -12,7 +12,6 @@ Extraction des démarches publiées sur [demarche.numerique.gouv.fr](https://dem
 
 - Un dossier déposé n'est **ni instruit ni payé** : ces chiffres mesurent le dépôt, pas l'issue des demandes.
 - **Aucun montant** n'est présent dans les sources utilisées.
-- Cinq guichets ont leurs effectifs **figés au 7 octobre 2026** (non rafraîchis lors de l'extraction du 16/10) : Marne, Charente, Île-de-France, Ardèche, Somme.
 - La **Martinique** est absente de la carte (`carte-dossiers.html`), qui ne couvre que la métropole ; ses dossiers restent comptés dans les totaux et dans le suivi des démarches (`suivi-demarches.html`).
 
 ## Licence
